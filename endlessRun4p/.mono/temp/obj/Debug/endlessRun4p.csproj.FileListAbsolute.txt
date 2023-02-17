@@ -1,0 +1,9 @@
+C:\Users\vitto\Documents\endless_run\endlessRun4p\.mono\temp\obj\Debug\endlessRun4p.csproj.AssemblyReference.cache
+C:\Users\vitto\Documents\endless_run\endlessRun4p\.mono\temp\obj\Debug\endlessRun4p.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vitto\Documents\endless_run\endlessRun4p\.mono\temp\obj\Debug\endlessRun4p.AssemblyInfoInputs.cache
+C:\Users\vitto\Documents\endless_run\endlessRun4p\.mono\temp\obj\Debug\endlessRun4p.AssemblyInfo.cs
+C:\Users\vitto\Documents\endless_run\endlessRun4p\.mono\temp\obj\Debug\endlessRun4p.csproj.CoreCompileInputs.cache
+C:\Users\vitto\Documents\endless_run\endlessRun4p\.mono\temp\bin\Debug\endlessRun4p.dll
+C:\Users\vitto\Documents\endless_run\endlessRun4p\.mono\temp\bin\Debug\endlessRun4p.pdb
+C:\Users\vitto\Documents\endless_run\endlessRun4p\.mono\temp\obj\Debug\endlessRun4p.dll
+C:\Users\vitto\Documents\endless_run\endlessRun4p\.mono\temp\obj\Debug\endlessRun4p.pdb
