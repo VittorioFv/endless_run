@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://asset/testa.svg" type="Texture" id=1]
-[ext_resource path="res://scene/script/Player.cs" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 26, 52 )
@@ -1023,25 +1022,23 @@ blend_point_1/pos = -0.9
 [sub_resource type="AnimationNodeTimeScale" id=6]
 
 [sub_resource type="AnimationNodeBlendTree" id=7]
-graph_offset = Vector2( 221.37, -5.05864 )
+graph_offset = Vector2( 296.265, 51.2192 )
 nodes/RunAir/node = SubResource( 15 )
-nodes/RunAir/position = Vector2( 400, 120 )
+nodes/RunAir/position = Vector2( 260, 80 )
 nodes/TimeScale/node = SubResource( 6 )
-nodes/TimeScale/position = Vector2( 600, 120 )
-nodes/output/position = Vector2( 760, 120 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "RunAir" ]
+nodes/TimeScale/position = Vector2( 680, 120 )
+nodes/output/position = Vector2( 880, 120 )
+node_connections = [ "TimeScale", 0, "RunAir", "output", 0, "TimeScale" ]
 
 [node name="Player" type="KinematicBody2D"]
-script = ExtResource( 2 )
-color = Color( 1, 0, 0, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -52 )
 shape = SubResource( 1 )
 
 [node name="NearFloor" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 16
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NearFloor"]
 shape = SubResource( 2 )
@@ -1210,4 +1207,4 @@ tree_root = SubResource( 7 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/RunAir/blend_position = -1.0
-parameters/TimeScale/scale = 0.0
+parameters/TimeScale/scale = 0.5

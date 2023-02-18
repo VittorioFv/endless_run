@@ -1,61 +1,66 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scene/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scene/script/Blocco.cs" type="Script" id=2]
+[ext_resource path="res://scene/Blocco.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/script/Camera.cs" type="Script" id=3]
+[ext_resource path="res://scene/Gameplay.cs" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 52, 13 )
+extents = Vector2( 191, 2544.75 )
 
 [node name="Gameplay" type="Node2D"]
-position = Vector2( 216, 243 )
+script = ExtResource( 4 )
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2( 746, 277 )
+position = Vector2( 962, 520 )
 current = true
 script = ExtResource( 3 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -164, 368 )
+[node name="Area2D" type="Area2D" parent="Camera"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Area2D"]
+position = Vector2( -4056, 78 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera/Area2D"]
+position = Vector2( -1313, 1001 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Player2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 676 )
 z_index = 1
+collision_layer = 2
+collision_mask = 2
+playerID = 2
+color = Color( 0.21, 0.667333, 0.7, 1 )
 
-[node name="Blocco" type="StaticBody2D" parent="."]
-position = Vector2( -21, 381 )
-collision_layer = 3
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Player3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 637 )
+z_index = 1
+collision_layer = 4
+collision_mask = 4
+playerID = 3
+color = Color( 0.776471, 0.231373, 0.231373, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocco"]
-position = Vector2( 0, 13 )
-scale = Vector2( 10, 1 )
-shape = SubResource( 1 )
+[node name="Player4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 715 )
+z_index = 1
+collision_layer = 8
+collision_mask = 8
+playerID = 4
+color = Color( 0.20549, 0.785156, 0.352707, 1 )
 
-[node name="Line2D" type="Line2D" parent="Blocco"]
-position = Vector2( 0, 297 )
-points = PoolVector2Array( -507, -284, 507, -284 )
-width = 26.0
-begin_cap_mode = 2
-end_cap_mode = 2
+[node name="Player1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 767 )
+z_index = 1
+playerID = 1
+color = Color( 0.792, 0.176, 0.88, 1 )
 
-[node name="Blocco2" type="StaticBody2D" parent="."]
-position = Vector2( 239, 147 )
-collision_layer = 3
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Blocco" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1001, 806 )
+scale = Vector2( 19.242, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocco2"]
-position = Vector2( 0, 13 )
-scale = Vector2( 10, 1 )
-shape = SubResource( 1 )
-one_way_collision = true
-
-[node name="Line2D" type="Line2D" parent="Blocco2"]
-position = Vector2( 0, 297 )
-points = PoolVector2Array( -507, -284, 507, -284 )
-width = 26.0
-begin_cap_mode = 2
-end_cap_mode = 2
+[connection signal="body_entered" from="Camera/Area2D" to="." method="_on_Area2D_body_entered"]
